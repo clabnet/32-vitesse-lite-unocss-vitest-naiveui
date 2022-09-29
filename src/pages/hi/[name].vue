@@ -14,12 +14,13 @@ const router = useRouter()
     </p>
 
     <div>
-      <button
+      <n-button
         class="btn m-3 text-sm mt-8"
         @click="router.back()"
       >
         Back
-      </button>
+      </n-button>
+
     </div>
   </div>
 </template>

@@ -5,6 +5,7 @@ specifiers:
   '@iconify-json/carbon': ^1.1.8
   '@types/node': ^18.7.23
   '@unocss/reset': ^0.45.26
+  '@vicons/ionicons5': ^0.12.0
   '@vitejs/plugin-vue': ^3.1.0
   '@vue/test-utils': ^2.1.0
   '@vueuse/core': ^9.3.0
@@ -35,6 +36,7 @@ devDependencies:
   '@iconify-json/carbon': 1.1.8
   '@types/node': 18.7.23
   '@unocss/reset': 0.45.26
+  '@vicons/ionicons5': 0.12.0
   '@vitejs/plugin-vue': 3.1.0_vite@3.1.4+vue@3.2.40
   '@vue/test-utils': 2.1.0_vue@3.2.40
   eslint: 8.24.0
@@ -805,6 +807,10 @@ packages:
       '@unocss/transformer-directives': 0.45.26
       magic-string: 0.26.4
       vite: 3.1.4
+    dev: true
+
+  /@vicons/ionicons5/0.12.0:
+    resolution: {integrity: sha512-Iy1EUVRpX0WWxeu1VIReR1zsZLMc4fqpt223czR+Rpnrwu7pt46nbnC2ycO7ItI/uqDLJxnbcMC7FujKs9IfFA==}
     dev: true
 
   /@vitejs/plugin-vue/3.1.0_vite@3.1.4+vue@3.2.40:
