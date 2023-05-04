@@ -1,13 +1,14 @@
 /// <reference types="vitest" />
 
-import path from 'path'
+import path from 'node:path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Unocss from 'unocss/vite'
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
+import UnoCSS from 'unocss/vite'
+import VueMacros from 'unplugin-vue-macros/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
   resolve: {
@@ -16,8 +17,12 @@ export default defineConfig({
     },
   },
   plugins: [
-    Vue({
-      reactivityTransform: true,
+    VueMacros({
+      plugins: {
+        vue: Vue({
+          reactivityTransform: true,
+        }),
+      },
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
@@ -38,11 +43,11 @@ export default defineConfig({
       vueTemplate: true,
       exclude: [
         '**/dist/**',
-      ]
+      ],
     }),
 
-     // https://github.com/antfu/vite-plugin-components
-     Components({
+    // https://github.com/antfu/vite-plugin-components
+    Components({
       dts: 'src/auto-components.d.ts',
       extensions: ['vue', 'md', 'svg'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
@@ -55,8 +60,8 @@ export default defineConfig({
     }),
 
     // https://github.com/antfu/unocss
-    // see unocss.config.ts for config
-    Unocss(),
+    // see uno.config.ts for config
+    UnoCSS(),
   ],
 
   // https://github.com/vitest-dev/vitest
